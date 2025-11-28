@@ -53,8 +53,6 @@
       // renderer.setSize(window.innerWidth, window.innerHeight);
       // // レンダラーのcanvas要素をbodyに追加 
       // document.body.appendChild(renderer.domElement);
-      // // シーンとカメラを使ってレンダリングを実行
-      // renderer.render(scene, camera);
 
       // // ジオメトリを作成
       // const ballGeometry = new THREE.SphereGeometry(
@@ -62,8 +60,13 @@
       //   64, // 水平方向のセグメント数（経度方向）
       //   32 // 垂直方向のセグメント数（緯度方向）
       // );
-      // // テクスチャを追加
-      // // const textures = new THREE.TextureLoader().load(TAKOYAKI_BASE64);
+
+      // // テクスチャを追加（コールバックで読み込み完了後に再描画）
+      // // const textures = new THREE.TextureLoader().load(TAKOYAKI_BASE64, () => {
+      // //   // テクスチャ読み込み完了後に再描画
+      // //   renderer.render(scene, camera); 
+      // // });
+      
       // // マテリアルを作成
       // const ballMaterial = new THREE.MeshPhysicalMaterial();
       // // const ballMaterial = new THREE.MeshPhysicalMaterial({ map: textures });
@@ -81,6 +84,9 @@
       // directionalLight.position.set(1, 1, 1);
       // // シーンに追加
       // scene.add(directionalLight);
+
+      // // シーンとカメラを使ってレンダリングを実行
+      // renderer.render(scene, camera);
 
       // function animate() {
       //   // たこやきを円軌道で動かす
